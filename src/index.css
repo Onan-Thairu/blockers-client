@@ -1,4 +1,4 @@
-/* * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,6 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0% 10%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 code {
@@ -20,8 +21,8 @@ code {
 }
 
 h4 {
-  font-size: 1rem;
-  color: rgb(56, 56, 56);
+  font-size: 2rem;
+  color: #778472;
 }
 
 h3 {
@@ -32,5 +33,5 @@ h3 {
 }
 
 a {
-  color: rgb(56, 56, 56);
-} */
+  color: #778472;
+}
