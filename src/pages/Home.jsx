@@ -8,7 +8,7 @@ function Home() {
       <div>
         <Header>
           <h4>Blockers</h4>
-          <Add to='/'>ADD BLOCKER</Add>
+          <Add to='/create-blocker'>ADD BLOCKER</Add>
         </Header>
         <Blockers />
       </div>
