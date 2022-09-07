@@ -36,9 +36,9 @@ const Add = styled(Link)`
   text-decoration: none;
   background-color: #778472;
   color: #fff;
-  font-size: 0.7em;
+  font-size: 0.7rem;
   font-weight: 600;
-  padding: .8rem 1rem;
+  padding: .7rem .8rem;
   letter-spacing: .1rem;
   border-radius: .5rem;
 `
