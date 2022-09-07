@@ -5,7 +5,7 @@ function Pages() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={ <Home />}></Route>
+        <Route path="/blockers" element={ <Home />}></Route>
       </Routes>
     </BrowserRouter>
   )
