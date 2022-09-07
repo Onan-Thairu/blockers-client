@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Description from "./Description"
 
 function Blockers() {
 
@@ -17,8 +18,6 @@ function Blockers() {
 
   return (
     <>
-      <p>Blockers list</p>
-      
         {/* {
           blockers.map((blocker) => {
             return (
@@ -29,7 +28,7 @@ function Blockers() {
             )
           })
         } */}
-      
+      <Description />
     </>
   )
 }
