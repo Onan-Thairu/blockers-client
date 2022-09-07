@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Description from "./Description"
+import Filter from "./Filter"
 
 function Blockers() {
 
@@ -18,6 +19,7 @@ function Blockers() {
 
   return (
     <>
+      <Filter/>
         {/* {
           blockers.map((blocker) => {
             return (
