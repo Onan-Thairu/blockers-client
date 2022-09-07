@@ -17,7 +17,7 @@ const Container = styled.div`
   padding: .5rem;
   border-radius: .5rem;
   color: #fff;
-  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
   line-height: 1.6rem;
   font-size: .9rem;
 

@@ -17,7 +17,7 @@ const FilterContainer = styled.div`
   display: flex;
   width: 300px;
   margin: 0rem auto;
-
+  margin-bottom: 1rem;
   p {
     padding-right: 1rem;
     font-weight: 600;

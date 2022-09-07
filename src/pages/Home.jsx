@@ -21,7 +21,7 @@ const Header = styled.div`
   gap: 60%;
   font-size: 1.5rem;
   font-weight: 400;
-  margin-top: 2rem;
+  margin-top: .8rem;
   text-align: center;
 
   h4 {
