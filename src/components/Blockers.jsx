@@ -4,33 +4,30 @@ import Filter from "./Filter"
 
 function Blockers() {
 
-  // const [ blockers, setBlockers ] = useState()
+  const [ blockers, setBlockers ] = useState([])
 
-  // useEffect(() => {
-  //   getBlockers()
-  // }, [])
+  useEffect(() => {
+    getBlockers()
+  }, [])
 
-  // const getBlockers = async () => {
-  //   const api = await fetch(`http://localhost:9292/blockers`)
-  //   const data = await api.json()
-  //   console.log(data)
-  //   setBlockers(data)
-  // }
+  const getBlockers = async () => {
+    const api = await fetch(`http://localhost:9292/blockers`)
+    const data = await api.json()
+    setBlockers(data)
+  }
 
   return (
     <>
       <Filter/>
-        {/* {
-          blockers.map((blocker) => {
-            return (
-              <div>
-                <p>{ blocker.description }</p>
-                <p>{ blocker.solution }</p>
-              </div>
-            )
-          })
-        } */}
-      <Description />
+
+      {
+        blockers.map((blocker) => {
+          return (
+            <Description key={ blocker.id } blocker={ blocker } />
+          )
+        })
+      }
+
     </>
   )
 }

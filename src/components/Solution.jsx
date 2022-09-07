@@ -1,11 +1,10 @@
 import styled from "styled-components"
 
-function Solution() {
+function Solution({solution}) {
   return (
     <Sol>
       <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-      incididunt ut labore et dolore magna aliqua.
+        {solution}
       </p>
     </Sol>
   )
@@ -15,7 +14,7 @@ const Sol = styled.div`
   background-color: #F4F4ED;
   color: #2F2F30;
   margin: .5rem 1rem;
-  padding: .3rem;
+  padding: .3rem .4rem;
   border-radius: .5rem;
   font-size: .8rem;
   font-weight: 500;

@@ -1,17 +1,14 @@
 import styled from "styled-components"
 import Solution from "./Solution"
 
-function Description() {
+function Description({blocker}) {
   return (
-    <Container>
-      <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-      molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-      numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-      optio, eaque rerum!
-      </p>
-      <Solution />
-    </Container>
+    <>
+      <Container>
+        <p>{blocker.description}</p>
+        <Solution solution={ blocker.solution} />
+      </Container>
+    </>
   )
 }
 
@@ -23,6 +20,11 @@ const Container = styled.div`
   margin-top: 1.2rem;
   line-height: 1.6rem;
   font-size: .9rem;
+
+  box-shadow: 3px 4px 5px -3px rgba(107,101,101,0.75);
+  -webkit-box-shadow: 3px 4px 5px -3px rgba(107,101,101,0.75);
+  -moz-box-shadow: 3px 4px 5px -3px rgba(107,101,101,0.75);
+
 `
 
 export default Description
