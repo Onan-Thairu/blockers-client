@@ -1,8 +1,10 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 function CreateBlocker() {
   return (
     <Wrapper>
+      <Link to={"/blockers"}>Home</Link>
       <h4>Create Blocker</h4>
       <div>
         <Form>
@@ -38,6 +40,13 @@ const Wrapper = styled.div`
   h4 {
     margin: 1rem .2rem;
     font-weight: 900;
+  }
+  a {
+    display: flex;
+    width: 5rem;
+    margin: 1rem 0;
+    text-decoration: none;
+    font-weight: 600;
   }
 `
 

@@ -8,7 +8,7 @@ function Home() {
       <div>
         <Header>
           <h4>Blockers</h4>
-          <Add to='/create-blocker'>ADD BLOCKER</Add>
+          <AddBtn to='/create-blocker'>ADD BLOCKER</AddBtn>
         </Header>
         <Blockers />
       </div>
@@ -32,7 +32,7 @@ const Header = styled.div`
   }
 
 `
-const Add = styled(Link)`
+const AddBtn = styled(Link)`
   text-decoration: none;
   background-color: #778472;
   color: #fff;
