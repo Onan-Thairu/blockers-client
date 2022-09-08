@@ -1,24 +1,37 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
 function CreateBlocker() {
+
+  const [formData, setFormData] = useState({})
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(e.target)
+  }
+
+  const handleCreate = (data) => {
+    console.log(data)
+  }
   return (
     <Wrapper>
       <Link to={"/blockers"}>Home</Link>
       <h4>Create Blocker</h4>
       <div>
-        <Form>
+        <Form onSubmit={ handleSubmit }>
           <div>
             <label htmlFor="username">USERNAME</label>
-            <input type="text" id="username" name="username" />
+            <input type="text" id="username" name="username" required />
           </div>
           <div>
             <label htmlFor="blocker">BLOCKER</label>
-            <textarea name="blocker" id="blocker" cols="30" rows="5"></textarea>
+            <textarea name="blocker" id="blocker" cols="30" rows="5" required ></textarea>
           </div>
           <div>
             <label htmlFor="tags">TAG</label>
-            <select id="tags" name="tags">
+            <select id="tags" name="tags" required >
+              <option value=""></option>
               <option value="react">React</option>
               <option value="ruby">Ruby</option>
               <option value="javascript">Javascript</option>
@@ -26,7 +39,7 @@ function CreateBlocker() {
           </div>
           <div>
             <label htmlFor="solution">SOLUTION</label>
-            <textarea name="solution" id="solution" cols="30" rows="5"></textarea>
+            <textarea name="solution" id="solution" cols="30" rows="5" required ></textarea>
           </div>
           <button>SUBMIT</button>
         </Form>
