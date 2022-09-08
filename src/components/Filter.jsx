@@ -5,6 +5,7 @@ function Filter({handleFilter}) {
   const onTagChange = (e) => {
     handleFilter(e.target.value)
   }
+
   return (
     <FilterContainer>
       <p>Filter by</p>
@@ -17,6 +18,7 @@ function Filter({handleFilter}) {
     </FilterContainer>
   )
 }
+
 const FilterContainer = styled.div`
   display: flex;
   width: 300px;
@@ -25,6 +27,7 @@ const FilterContainer = styled.div`
   p {
     padding-right: 1rem;
     font-weight: 600;
+    color: #778472;
   }
 `
 
