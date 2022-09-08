@@ -80,6 +80,10 @@ const Form = styled.form`
     margin-top: 2rem;
     padding: 0.5rem 1rem;
     font-weight: 900;
+
+    &:hover {
+      background-color: #A8C79C;
+    }
   }
 
   box-shadow: 0px 1px 5px 2px rgba(194,194,194,0.75);
