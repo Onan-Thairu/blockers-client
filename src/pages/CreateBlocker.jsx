@@ -1,19 +1,30 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { useState } from "react"
 
 function CreateBlocker() {
 
-  const [formData, setFormData] = useState({})
-
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(e.target)
+    const form = e.target.elements
+
+    const data = {
+      username: form.username.value,
+      description: form.description.value,
+      tag: form.tags.value,
+      solution: form.solution.value,
+      user_id: Math.round( Math.random() * (1 - 5) + 5)
+    }
+
+    fetch(`http://localhost:9292/blockers`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(() => e.target.reset())
   }
 
-  const handleCreate = (data) => {
-    console.log(data)
-  }
   return (
     <Wrapper>
       <Link to={"/blockers"}>Home</Link>
@@ -25,8 +36,8 @@ function CreateBlocker() {
             <input type="text" id="username" name="username" required />
           </div>
           <div>
-            <label htmlFor="blocker">BLOCKER</label>
-            <textarea name="blocker" id="blocker" cols="30" rows="5" required ></textarea>
+            <label htmlFor="description">BLOCKER</label>
+            <textarea name="description" id="description" cols="30" rows="5" required ></textarea>
           </div>
           <div>
             <label htmlFor="tags">TAG</label>
