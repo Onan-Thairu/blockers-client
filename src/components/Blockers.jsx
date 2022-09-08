@@ -16,9 +16,22 @@ function Blockers() {
     setBlockers(data)
   }
 
+  const handleFilter = (selectedValue) => {
+    if (selectedValue === "all") {
+      getBlockers()
+    } else {
+      fetch(`http://localhost:9292/blockers/${selectedValue}`)
+      .then(response => response.json())
+      .then(data => {
+        setBlockers(data)
+      })
+    }
+
+  }
+
   return (
     <>
-      <Filter/>
+      <Filter handleFilter={ handleFilter }/>
 
       {
         blockers.map((blocker) => {

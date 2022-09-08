@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
-function Filter() {
+function Filter({handleFilter}) {
+
+  const onTagChange = (e) => {
+    handleFilter(e.target.value)
+  }
   return (
     <FilterContainer>
       <p>Filter by</p>
-      <select id="tags" name="tags">
+      <select id="tags" name="tags" onChange={ onTagChange } >
         <option value="all">All</option>
         <option value="react">React</option>
         <option value="ruby">Ruby</option>
