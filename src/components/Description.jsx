@@ -5,7 +5,6 @@ function Description({blocker}) {
   return (
     <>
       <Container>
-        <h6>By { blocker.username }</h6>
         <p>{blocker.description}</p>
         <Solution solution={ blocker.solution} />
       </Container>
