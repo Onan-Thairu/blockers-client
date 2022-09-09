@@ -30,9 +30,13 @@ function Blockers() {
   }
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:9292/blockers/${id}`)
+    fetch(`http://localhost:9292/blockers/${id}`, {
+      method: "DELETE",
+    })
     .then((response) => response.json())
-    .then(() => getBlockers())
+    .then(() => {
+      getBlockers()
+    })
   }
 
   return (
