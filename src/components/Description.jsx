@@ -2,11 +2,12 @@ import styled from "styled-components"
 import Solution from "./Solution"
 import { AiOutlineDelete } from 'react-icons/ai'
 
-function Description({blocker}) {
+function Description({blocker, handleDelete }) {
+
   return (
     <>
       <Container>
-        <h2><AiOutlineDelete /></h2>
+        <h2 onClick={() => handleDelete(blocker.id)} ><AiOutlineDelete /></h2>
         <p>{blocker.description}</p>
         <Solution solution={ blocker.solution} />
       </Container>

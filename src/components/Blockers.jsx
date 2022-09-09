@@ -29,6 +29,12 @@ function Blockers() {
 
   }
 
+  const handleDelete = (id) => {
+    fetch(`http://localhost:9292/blockers/${id}`)
+    .then((response) => response.json())
+    .then(() => getBlockers())
+  }
+
   return (
     <>
       <Filter handleFilter={ handleFilter }/>
@@ -36,7 +42,7 @@ function Blockers() {
       {
         blockers.map((blocker) => {
           return (
-            <Description key={ blocker.id } blocker={ blocker } />
+            <Description key={ blocker.id } blocker={ blocker } handleDelete={ handleDelete } />
           )
         })
       }
