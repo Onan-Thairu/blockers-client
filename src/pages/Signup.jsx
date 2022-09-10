@@ -22,7 +22,7 @@ function Signup() {
       },
       body: JSON.stringify(data)
     })
-    .then(() => e.target.reset())
+    // .then(() => e.target.reset())
     .then(() => {
       // navigate("/blockers-list")
     })
