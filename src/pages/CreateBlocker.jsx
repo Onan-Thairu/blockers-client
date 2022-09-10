@@ -10,7 +10,6 @@ function CreateBlocker() {
     const form = e.target.elements
 
     const data = {
-      username: form.username.value,
       description: form.description.value,
       tag: form.tags.value,
       solution: form.solution.value,
@@ -36,10 +35,6 @@ function CreateBlocker() {
       <h4>Create Blocker</h4>
       <div>
         <Form onSubmit={ handleSubmit }>
-          <div>
-            <label htmlFor="username">USERNAME</label>
-            <input type="text" id="username" name="username" required />
-          </div>
           <div>
             <label htmlFor="description">BLOCKER</label>
             <textarea name="description" id="description" cols="30" rows="5" required ></textarea>
