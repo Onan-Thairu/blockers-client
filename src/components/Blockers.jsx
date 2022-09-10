@@ -11,7 +11,7 @@ function Blockers() {
   }, [])
 
   const getBlockers = async () => {
-    const api = await fetch(`http://localhost:9292/blockers`)
+    const api = await fetch(`http://localhost:9292/blockers-list`)
     const data = await api.json()
     setBlockers(data)
   }

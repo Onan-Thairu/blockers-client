@@ -1,7 +1,9 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function CreateBlocker() {
+  let navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -23,11 +25,14 @@ function CreateBlocker() {
       body: JSON.stringify(data)
     })
     .then(() => e.target.reset())
+    .then(() => {
+      navigate("/blockers-list")
+    })
   }
 
   return (
     <Wrapper>
-      <Link to={"/blockers"}>Home</Link>
+      <Link to={"/blockers-list"}>Home</Link>
       <h4>Create Blocker</h4>
       <div>
         <Form onSubmit={ handleSubmit }>
