@@ -11,7 +11,8 @@ function Blockers() {
   }, [])
 
   const getBlockers = async () => {
-    const api = await fetch(`http://localhost:9292/blockers-list`)
+    const currentUser = localStorage.getItem("currentUser")
+    const api = await fetch(`http://localhost:9292/blockers-list/${currentUser}`)
     const data = await api.json()
     setBlockers(data)
   }
