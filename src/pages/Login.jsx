@@ -1,11 +1,9 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
 
 function Login() {
   let navigate = useNavigate()
-  const [currentUser, setCurrentUser] = useState({})
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -26,7 +24,7 @@ function Login() {
     })
     .then((response) => response.json())
     .then((data) => {
-      setCurrentUser(data)
+      localStorage.setItem("currentUser", data.user_id)
       navigate("/blockers-list")
     })
   }
