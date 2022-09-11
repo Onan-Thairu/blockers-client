@@ -17,11 +17,12 @@ function Blockers() {
     setBlockers(data)
   }
 
-  const handleFilter = (selectedValue) => {
-    if (selectedValue === "all") {
+  const handleFilter = (selectedTag) => {
+    const currentUser = localStorage.getItem("currentUser")
+    if (selectedTag === "all") {
       getBlockers()
     } else {
-      fetch(`http://localhost:9292/blockers/${selectedValue}`)
+      fetch(`http://localhost:9292/blockers/${currentUser}/${selectedTag}`)
       .then(response => response.json())
       .then(data => {
         setBlockers(data)
