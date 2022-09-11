@@ -10,9 +10,7 @@ function Home() {
           <h4>Blockers</h4>
           <AddBtn to='/create-blocker'>ADD BLOCKER</AddBtn>
         </Header>
-        {
-          localStorage.getItem('currentUser').length = 1 ? <a href="/logout">Logout</a> : <a href="/signup">Signup</a>
-        }
+        <a href="/logout">Logout</a>
         <Blockers />
       </div>
     </>
