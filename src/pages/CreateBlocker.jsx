@@ -8,12 +8,13 @@ function CreateBlocker() {
   const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target.elements
+    const currentUser = localStorage.getItem("currentUser")
 
     const data = {
       description: form.description.value,
       tag: form.tags.value,
       solution: form.solution.value,
-      user_id: Math.round( Math.random() * (1 - 5) + 5)
+      user_id: currentUser
     }
 
     fetch(`http://localhost:9292/blockers`, {
