@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 
 function Signup() {
-  let navigate = useNavigate()
+  // let navigate = useNavigate()
 
   const handleSignup = (e) => {
     e.preventDefault()
@@ -18,14 +18,17 @@ function Signup() {
     fetch(`http://localhost:9292/signup`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
       },
       body: JSON.stringify(data)
     })
     .then((response) => {
-      if (response.status === 200) {
-        navigate('/login')
-      }
+      // if (response.status === 200) {
+      //   navigate('/login')
+      // }
+      e.target.reset()
+      alert("New user created. You can now Log in.")
     })
   }
 
