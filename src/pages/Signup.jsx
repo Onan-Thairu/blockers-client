@@ -31,7 +31,7 @@ function Signup() {
 
   return (
     <Wrapper>
-      <Link to={"/blockers-list"}>Home</Link>
+      {/* <Link to={"/blockers-list"}>Home</Link> */}
       <h4>Signup</h4>
       <div>
         <Form onSubmit={ handleSignup }>
@@ -48,6 +48,7 @@ function Signup() {
             <input type="password" name="password" />
           </div>
           <button>SUBMIT</button>
+          <p>Already have an account? <Link to={"/login"} id="login">Login</Link></p>
         </Form>
       </div>
     </Wrapper>
@@ -66,6 +67,12 @@ const Wrapper = styled.div`
     margin: 1rem 0;
     text-decoration: none;
     font-weight: 600;
+  }
+  #login {
+    display: inline-block;
+    text-decoration: underline;
+    color: #005b96;
+    font-size: .8rem;
   }
 `
 

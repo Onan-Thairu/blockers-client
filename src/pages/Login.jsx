@@ -31,7 +31,7 @@ function Login() {
 
   return (
     <Wrapper>
-      <Link to={"/blockers-list"}>Home</Link>
+      {/* <Link to={"/blockers-list"}>Home</Link> */}
       <h4>Login</h4>
       <div>
         <Form onSubmit={ handleLogin }>
