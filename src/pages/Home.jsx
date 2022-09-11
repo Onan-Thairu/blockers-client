@@ -10,6 +10,7 @@ function Home() {
           <h4>Blockers</h4>
           <AddBtn to='/create-blocker'>ADD BLOCKER</AddBtn>
         </Header>
+        <a href="/logout">Logout</a>
         <Blockers />
       </div>
     </>
@@ -18,7 +19,8 @@ function Home() {
 
 const Header = styled.div`
   display: flex;
-  gap: 60%;
+  gap: 50%;
+  flex-wrap: wrap;
   font-size: 1.5rem;
   font-weight: 400;
   margin-top: .8rem;
