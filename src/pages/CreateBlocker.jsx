@@ -23,9 +23,10 @@ function CreateBlocker() {
       },
       body: JSON.stringify(data)
     })
-    .then(() => e.target.reset())
-    .then(() => {
-      navigate("/blockers-list")
+    .then((response) => {
+      if (response.status === 200) {
+        navigate("/blockers-list")
+      }
     })
   }
 

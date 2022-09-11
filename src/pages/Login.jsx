@@ -1,44 +1,42 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 
-function Signup() {
+function Login() {
   let navigate = useNavigate()
+  const [currentUser, setCurrentUser] = useState({})
 
-  const handleSignup = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault()
     const form = e.target.elements
 
     const data = {
-      username: form.username.value,
       email: form.email.value,
       password: form.password.value,
     }
 
-    fetch(`http://localhost:9292/signup`, {
+    fetch(`http://localhost:9292/login`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
       },
       body: JSON.stringify(data)
     })
-    .then((response) => {
-      if (response.status === 200) {
-        navigate('/login')
-      }
+    .then((response) => response.json())
+    .then((data) => {
+      setCurrentUser(data)
+      navigate("/blockers-list")
     })
   }
 
   return (
     <Wrapper>
       <Link to={"/blockers-list"}>Home</Link>
-      <h4>Signup</h4>
+      <h4>Login</h4>
       <div>
-        <Form onSubmit={ handleSignup }>
-          <div>
-            <label htmlFor="username">Enter Username</label>
-            <input type="text" name="username" />
-          </div>
+        <Form onSubmit={ handleLogin }>
           <div>
             <label htmlFor="email">Enter Email</label>
             <input type="email" name="email" />
@@ -48,6 +46,7 @@ function Signup() {
             <input type="password" name="password" />
           </div>
           <button>SUBMIT</button>
+          <p>Don't have an account? <Link to={"/signup"} id="signup" >Signup</Link></p>
         </Form>
       </div>
     </Wrapper>
@@ -66,6 +65,12 @@ const Wrapper = styled.div`
     margin: 1rem 0;
     text-decoration: none;
     font-weight: 600;
+  }
+  #signup {
+    display: inline-block;
+    text-decoration: underline;
+    color: #005b96;
+    font-size: .8rem;
   }
 `
 
@@ -110,4 +115,4 @@ const Form = styled.form`
   -moz-box-shadow: 0px 1px 5px 2px rgba(194,194,194,0.75);
 
 `
-export default Signup
+export default Login
