@@ -32,7 +32,8 @@ function Blockers() {
   }
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:9292/blockers/${id}`, {
+    const currentUser = localStorage.getItem("currentUser")
+    fetch(`http://localhost:9292/blockers/${currentUser}/${id}`, {
       method: "DELETE",
     })
     .then((response) => response.json())
