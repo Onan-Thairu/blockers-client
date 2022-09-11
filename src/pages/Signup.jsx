@@ -31,7 +31,7 @@ function Signup() {
 
   return (
     <Wrapper>
-      {/* <Link to={"/blockers-list"}>Home</Link> */}
+      <Link to={"/"}>Home</Link>
       <h4>Signup</h4>
       <div>
         <Form onSubmit={ handleSignup }>

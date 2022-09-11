@@ -3,12 +3,14 @@ import Signup from "./Signup";
 import Login from "./Login";
 import Logout from "./Logout";
 import CreateBlocker from "./CreateBlocker";
+import LandingPage from "./LandingPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function Pages() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={ <LandingPage /> } />
         <Route path="/blockers-list" element={ <Home /> } />
         <Route path="/create-blocker" element={ <CreateBlocker /> } />
         <Route path="/signup" element={ <Signup />} />
