@@ -24,15 +24,18 @@ function Signup() {
       },
       body: JSON.stringify(data)
     })
-    .then((response) => {
-      onlogin.textContent = "User created successfully. Click on login to log in to your account."
-      if (response) {
-        e.target.reset()
-        navigate('/login')
-      }
-      // e.target.reset()
-      // alert("New user created. You can now Log in.")
+    .then(() => {
+      navigate('/login')
     })
+    // .then((response) => {
+    //   onlogin.textContent = "User created successfully. Click on login to log in to your account."
+    //   if (response) {
+    //     e.target.reset()
+    //     navigate('/login')
+    //   }
+    //   // e.target.reset()
+    //   // alert("New user created. You can now Log in.")
+    // })
   }
 
   return (
