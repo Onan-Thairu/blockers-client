@@ -9,9 +9,11 @@ function LandingPage() {
       </Logo>
       <Hero>
         Do you have blockers that you'd like to save for a quick reference in the 
-        future? Or some other important code snippets?
+        future? Or some other important code snippets you use often but can't seem
+        to remember the exact commands?
         <p>
-          Signup with us and we'll help you save them.
+          We've got you. No need to keep going through search results again looking for a specific
+          result. Signup with us and we'll help you save them conveniently.
         </p>
       </Hero>
       <Btn>
