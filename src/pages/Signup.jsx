@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
-// import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function Signup() {
-  // let navigate = useNavigate()
+  let navigate = useNavigate()
 
   const handleSignup = (e) => {
     e.preventDefault()
@@ -15,6 +15,8 @@ function Signup() {
       password: form.password.value,
     }
 
+    const onlogin = document.getElementById("onlogin")
+
     fetch(`https://blockers-server.herokuapp.com/signup`, {
       method: "POST",
       headers: {
@@ -24,11 +26,13 @@ function Signup() {
       body: JSON.stringify(data)
     })
     .then((response) => {
-      // if (response.status === 200) {
-      //   navigate('/login')
-      // }
-      e.target.reset()
-      alert("New user created. You can now Log in.")
+      onlogin.textContent = "User created successfully. Click on login to log in to your account."
+      if (response) {
+        e.target.reset()
+        navigate('/login')
+      }
+      // e.target.reset()
+      // alert("New user created. You can now Log in.")
     })
   }
 
@@ -52,6 +56,7 @@ function Signup() {
           </div>
           <button>SUBMIT</button>
           <p>Already have an account? <Link to={"/login"} id="login">Login</Link></p>
+          <p id="onlogin"></p>
         </Form>
       </div>
     </Wrapper>
