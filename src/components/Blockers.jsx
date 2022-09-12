@@ -12,7 +12,7 @@ function Blockers() {
 
   const getBlockers = async () => {
     const currentUser = localStorage.getItem("currentUser")
-    const api = await fetch(`http://localhost:9292/blockers-list/${currentUser}`)
+    const api = await fetch(`https://blockers-server.herokuapp.com/blockers-list/${currentUser}`)
     const data = await api.json()
     setBlockers(data)
   }
@@ -22,7 +22,7 @@ function Blockers() {
     if (selectedTag === "all") {
       getBlockers()
     } else {
-      fetch(`http://localhost:9292/blockers/${currentUser}/${selectedTag}`)
+      fetch(`https://blockers-server.herokuapp.com/blockers/${currentUser}/${selectedTag}`)
       .then(response => response.json())
       .then(data => {
         setBlockers(data)
@@ -33,7 +33,7 @@ function Blockers() {
 
   const handleDelete = (id) => {
     const currentUser = localStorage.getItem("currentUser")
-    fetch(`http://localhost:9292/blockers/${currentUser}/${id}`, {
+    fetch(`https://blockers-server.herokuapp.com/blockers/${currentUser}/${id}`, {
       method: "DELETE",
     })
     .then((response) => response.json())
