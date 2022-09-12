@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 function Logout() {
   let navigate = useNavigate()
 
-  fetch(`http://localhost:9292/logout`)
+  fetch(`https://blockers-server.herokuapp.com/logout`)
   .then((res) => {
     localStorage.clear()
     navigate("/login")

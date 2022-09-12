@@ -15,7 +15,7 @@ function Signup() {
       password: form.password.value,
     }
 
-    fetch(`http://localhost:9292/signup`, {
+    fetch(`https://blockers-server.herokuapp.com/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

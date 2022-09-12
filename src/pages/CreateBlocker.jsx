@@ -17,7 +17,7 @@ function CreateBlocker() {
       user_id: currentUser
     }
 
-    fetch(`http://localhost:9292/blockers`, {
+    fetch(`https://blockers-server.herokuapp.com/blockers`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

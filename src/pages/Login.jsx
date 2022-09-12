@@ -14,7 +14,7 @@ function Login() {
       password: form.password.value,
     }
 
-    fetch(`http://localhost:9292/login`, {
+    fetch(`https://blockers-server.herokuapp.com/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
