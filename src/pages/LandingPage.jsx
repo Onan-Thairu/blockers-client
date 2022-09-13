@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { ReactComponent as Photo } from "../images/img1.svg"
 
 function LandingPage() {
   return (
@@ -7,15 +8,18 @@ function LandingPage() {
       <Logo>
         <h4>Blockers</h4>
       </Logo>
-      <Hero>
-        Do you have blockers that you'd like to save for a quick reference in the 
-        future? Or some other important code snippets you use often but can't seem
-        to remember the exact commands?
-        <p>
-          We've got you. No need to keep going through search results again looking for a specific
-          result. Signup with us and we'll help you save them conveniently.
-        </p>
-      </Hero>
+      <HeroContainer>
+        <Hero>
+          Do you have blockers that you'd like to save for a quick reference in the 
+          future? Or some other important code snippets you use often but can't seem
+          to remember the exact commands?
+          <p>
+            We've got you! No need to keep going through search results again looking for a specific
+            result. Signup with us and we'll help you save them conveniently.
+          </p>
+        </Hero>
+        <StyledPhoto />
+      </HeroContainer>
       <Btn>
         <AddBtn to='/login'>LOG IN</AddBtn>
         <AddBtn to='/signup'>SIGN UP</AddBtn>
@@ -36,16 +40,26 @@ const Logo = styled.div`
   }
 `
 
+const StyledPhoto = styled(Photo)`
+  height: 240px;
+  margin-top: 10%;
+`
+const HeroContainer = styled.div`
+  display: flex;
+  gap: 10px;
+
+`
+
 const Hero = styled.div`
-  margin-top: 8%;
-  font-size: 1.5em;
+  margin-top: 10%;
+  font-size: 1.1em;
   letter-spacing: .1rem;
   font-weight: 400;
   background-color: #778472;
   padding: 1rem;
   border-radius: .8rem;
   color: #fff;
-  font-family: 'Tiro Bangla', serif;
+  
 
   p {
     background-color: #F4F4ED;
@@ -53,7 +67,6 @@ const Hero = styled.div`
     color: #778472;
     padding: 1rem;
     border-radius: .8rem;
-    font-family: 'Tiro Bangla', serif;
   }
 `
 
