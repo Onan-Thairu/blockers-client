@@ -91,7 +91,7 @@ const Btn = styled.div`
   align-items: center;
   justify-content: center;
   width: 400px;
-  margin: 2rem auto;
-  gap: 2rem;
+  margin: 5rem auto;
+  gap: 4rem;
 `
 export default LandingPage
