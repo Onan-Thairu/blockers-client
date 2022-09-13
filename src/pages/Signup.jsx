@@ -41,24 +41,24 @@ function Signup() {
   return (
     <Wrapper>
       <Link to={"/"}>Home</Link>
-      <h4>Signup</h4>
+      <h4>SIGN UP</h4>
       <div>
         <Form onSubmit={ handleSignup }>
           <div>
-            <label htmlFor="username">Enter Username</label>
-            <input type="text" name="username" />
+            <label htmlFor="username">Username</label>
+            <input type="text" name="username" required />
           </div>
           <div>
-            <label htmlFor="email">Enter Email</label>
-            <input type="email" name="email" />
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" required />
           </div>
           <div>
-            <label htmlFor="password">Enter Password</label>
-            <input type="password" name="password" />
+            <label htmlFor="password">Password</label>
+            <input type="password" name="password" required />
           </div>
           <button>SUBMIT</button>
           <p>Already have an account? <Link to={"/login"} id="login">Login</Link></p>
-          <p id="onlogin"></p>
+          {/* <p id="onlogin"></p> */}
         </Form>
       </div>
     </Wrapper>
@@ -68,7 +68,7 @@ function Signup() {
 const Wrapper = styled.div`
   text-align: center;
   h4 {
-    margin: 1rem .2rem;
+    margin: 3rem .2rem;
     font-weight: 900;
   }
   a {
@@ -103,9 +103,11 @@ const Form = styled.form`
     font-weight: 900;
     margin: .5rem;
   }
-  input, {
-    padding: 0.4rem;
+  input {
+    padding: 0.5rem;
     width: 90%;
+    border: none;
+    border-radius: .5rem;
   }
 
   button {
@@ -118,7 +120,8 @@ const Form = styled.form`
     font-weight: 900;
 
     &:hover {
-      background-color: #A8C79C;
+      background-color: #fff;
+      color: #778472;
     }
   }
 
